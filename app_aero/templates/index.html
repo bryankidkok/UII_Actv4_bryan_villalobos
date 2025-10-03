@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Empleado bryan ricardo villalobos </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .employee-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .employee-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+        .employee-card:hover {
+            transform: translateY(-5px);
+        }
+        .employee-card h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .employee-card p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .employee-card p strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Información de Empleados de la Empresa</h1>
+    <div class="employee-container">
+        {% for empleado in empleados %}
+        <div class="employee-card">
+            <h2>{{ empleado.nombre }}</h2>
+            <p><strong>Puesto:</strong> {{ empleado.puesto }}</p>
+            <p><strong>Salario:</strong> ${{ empleado.salario }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
